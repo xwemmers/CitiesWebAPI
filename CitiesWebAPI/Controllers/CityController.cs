@@ -22,7 +22,7 @@ namespace CitiesWebAPI.Controllers
         }
 
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public ActionResult<City> Get(int id)
         {
             var c = cities.FirstOrDefault(c => c.CityID == id);
@@ -100,9 +100,8 @@ namespace CitiesWebAPI.Controllers
             return Accepted();
         }
 
-
         /// <summary>
-        /// Verwijderen
+        /// Deze methode verwijdert een stad
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
